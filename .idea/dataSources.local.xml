@@ -13,7 +13,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <user-name>root</user-name>
-      <introspection-scope>rails5_angular2_development:public,pg_catalog,root</introspection-scope>
+      <introspection-scope>rails5_angular2_development:pg_catalog,public,root</introspection-scope>
       <resolve-scope>rails5_angular2_development:public,root</resolve-scope>
     </data-source>
     <data-source name="Rails rails5_angular2: production" uuid="6b97e928-d9f5-44c1-acfe-814382c170c8">
