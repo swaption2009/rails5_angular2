@@ -47,25 +47,26 @@
     <database id="15" name="udacity_alumni_test">
       <object-id>133877</object-id>
     </database>
-    <database id="16" name="rails5_angular2_test">
-      <object-id>134269</object-id>
-    </database>
-    <database id="17" name="angular-cli-webpack-rails-deployment-example_development">
+    <database id="16" name="angular-cli-webpack-rails-deployment-example_development">
       <object-id>134270</object-id>
     </database>
-    <database id="18" name="angular-cli-webpack-rails-deployment-example_test">
+    <database id="17" name="angular-cli-webpack-rails-deployment-example_test">
       <object-id>134271</object-id>
     </database>
-    <database id="19" name="author_wizard_development">
+    <database id="18" name="author_wizard_development">
       <object-id>134288</object-id>
     </database>
-    <database id="20" name="author_wizard_test">
+    <database id="19" name="author_wizard_test">
       <object-id>134289</object-id>
+    </database>
+    <database id="20" name="rails5_angular2_test">
+      <object-id>134346</object-id>
     </database>
     <schema id="21" parent="1" name="public">
       <object-id>2200</object-id>
       <visible>1</visible>
-      <introspection-timestamp>2016-10-16.22:27:38.930</introspection-timestamp>
+      <introspection-state-number>46669</introspection-state-number>
+      <introspection-timestamp>2016-10-16.23:44:41.663</introspection-timestamp>
     </schema>
     <schema id="22" parent="1" name="pg_catalog">
       <object-id>11</object-id>
@@ -82,5 +83,101 @@
     <schema id="26" parent="1" name="information_schema">
       <object-id>12349</object-id>
     </schema>
+    <sequence id="27" parent="21" name="books_id_seq">
+      <object-id>134335</object-id>
+      <state-number>46669</state-number>
+    </sequence>
+    <table id="28" parent="21" name="ar_internal_metadata">
+      <object-id>134327</object-id>
+      <state-number>46668</state-number>
+    </table>
+    <table id="29" parent="21" name="books">
+      <object-id>134337</object-id>
+      <state-number>46669</state-number>
+    </table>
+    <table id="30" parent="21" name="schema_migrations">
+      <object-id>134319</object-id>
+      <state-number>46667</state-number>
+    </table>
+    <column id="31" parent="28" name="key">
+      <state-number>46668</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="32" parent="28" name="value">
+      <state-number>46668</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="33" parent="28" name="created_at">
+      <state-number>46668</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="34" parent="28" name="updated_at">
+      <state-number>46668</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="35" parent="28" name="ar_internal_metadata_pkey">
+      <object-id>134333</object-id>
+      <columns>key</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="36" parent="28" name="ar_internal_metadata_pkey">
+      <object-id>134334</object-id>
+      <columns>key</columns>
+      <underlying-index>ar_internal_metadata_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="37" parent="29" name="id">
+      <state-number>46669</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;books_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="38" parent="29" name="name">
+      <state-number>46669</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="39" parent="29" name="created_at">
+      <state-number>46669</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="40" parent="29" name="updated_at">
+      <state-number>46669</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="41" parent="29" name="books_pkey">
+      <object-id>134344</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="42" parent="29" name="books_pkey">
+      <object-id>134345</object-id>
+      <columns>id</columns>
+      <underlying-index>books_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="43" parent="30" name="version">
+      <state-number>46667</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar|0</data-type>
+    </column>
+    <index id="44" parent="30" name="schema_migrations_pkey">
+      <object-id>134325</object-id>
+      <columns>version</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="45" parent="30" name="schema_migrations_pkey">
+      <object-id>134326</object-id>
+      <columns>version</columns>
+      <underlying-index>schema_migrations_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
   </database-model>
 </dataSource>
