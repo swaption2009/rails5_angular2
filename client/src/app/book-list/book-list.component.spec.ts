@@ -14,6 +14,7 @@ import {
 
 import { BookListComponent } from './book-list.component';
 import { BookService } from '../book.service';
+import { MockBookFormComponent } from '../book-form/mock-book-form.component';
 
 describe('Component: BookList', () => {
   let fixture;
@@ -36,7 +37,10 @@ describe('Component: BookList', () => {
         },
         BookService
       ],
-      declarations: [BookListComponent]
+      declarations: [
+        BookListComponent,
+        MockBookFormComponent
+      ]
     });
 
     fixture = TestBed.createComponent(BookListComponent);

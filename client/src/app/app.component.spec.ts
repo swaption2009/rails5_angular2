@@ -1,13 +1,38 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
+import { MockBackend } from '@angular/http/testing';
+
+import {
+  Http,
+  Response,
+  ResponseOptions,
+  BaseRequestOptions,
+  ConnectionBackend
+} from '@angular/http';
+
 import { AppComponent } from './app.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { MockBookFormComponent } from './book-form/mock-book-form.component';
 
 describe('App: AuthorWizard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      providers: [
+        MockBackend,
+        BaseRequestOptions,
+        {
+          provide: Http,
+          useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
+            return new Http(backend, defaultOptions);
+          },
+          deps: [MockBackend, BaseRequestOptions]
+        }
+      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        BookListComponent,
+        MockBookFormComponent
       ],
     });
   });
