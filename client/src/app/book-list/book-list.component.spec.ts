@@ -1,8 +1,9 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
-import { MockBackend } from '@angular/http/testing';
-import { Observable } from 'rxjs/Observable';
+import { TestBed, async }   from '@angular/core/testing';
+import { MockBackend }      from '@angular/http/testing';
+import { Observable }       from 'rxjs/Observable';
+import { Directive, Input } from '@angular/core';
 
 import {
   Http,
@@ -12,9 +13,25 @@ import {
   ConnectionBackend
 } from '@angular/http';
 
-import { BookListComponent } from './book-list.component';
-import { BookService } from '../book.service';
-import { MockBookFormComponent } from '../book-form/mock-book-form.component';
+import { BookListComponent }      from './book-list.component';
+import { BookService }            from '../book.service';
+import { MockBookFormComponent }  from '../book-form/mock-book-form.component';
+
+@Directive({
+  selector: '[routerLink]',
+  host: {
+    '(click)': 'onClick()'
+  }
+})
+
+class RouterLinkStubDirective {
+  @Input('routerLink') linkParams: any;
+  navigatedTo: any = null;
+
+  onClick() {
+    this.navigatedTo = this.linkParams;
+  }
+}
 
 describe('Component: BookList', () => {
   let fixture;
@@ -39,7 +56,8 @@ describe('Component: BookList', () => {
       ],
       declarations: [
         BookListComponent,
-        MockBookFormComponent
+        MockBookFormComponent,
+        RouterLinkStubDirective
       ]
     });
 
