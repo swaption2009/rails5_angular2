@@ -1,8 +1,8 @@
 <nav>
-  <a routerLink="/new-book">New Book</a>
+  <a routerLink="/new-book">Add New Book</a>
 </nav>
 
-<table>
+<table class="table table-bordered table-striped">
   <tr *ngFor="let book of books">
     <td>{{ book.name }}</td>
     <td><a routerLink="/edit-book/{{ book.id }}">Edit</a></td>
